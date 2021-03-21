@@ -2,3 +2,5 @@
 
 # Rails.application.config.session_store :cookie_store, key: '_pinteresting_2_session'
 Rails.application.config.session_store :cookie_store, key: '_Airbnbwho_session', secure: Rails.env.production?
+
+Store::Application.config.session_store :cookie_store, key: '_Airbnbwho_session', domain: :all, tld_length: 2

@@ -20,6 +20,11 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# production:
+#   adapter: postgresql
+#   database: db/production.postgresql
+
+
+# AWS Elastic Beanstalk Production Database  
 production:
-  adapter: postgresql
-  database: db/production.postgresql
+  url: <%= ENV['DATABASE_URL'] %>
