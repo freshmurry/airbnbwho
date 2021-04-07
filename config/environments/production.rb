@@ -88,7 +88,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   #Required for Heroku
-  # config.action_mailer.default_url_options = { host: 'https://airbnbwho.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'https://airbnbwho.herokuapp.com' }
 
   config.action_mailer.raise_delivery_errors = true
   
@@ -122,4 +122,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+  
+  Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
+  Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
 end

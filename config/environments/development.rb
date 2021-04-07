@@ -68,7 +68,7 @@ Rails.application.configure do
   
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'https://ab63cf22d1164a2bae0b49af92304760.vfs.cloud9.us-east-1.amazonaws.com/' }
+  config.action_mailer.default_url_options = { host: 'https://6f81c0ccdb374bb1a39e58507e4fa5f4.vfs.cloud9.us-east-1.amazonaws.com/' }
 
   # Mailgun Integration
   
@@ -81,5 +81,7 @@ Rails.application.configure do
     user_name: 'postmaster@sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
     password: '20e436f9190a67c9fbb9b852ab52cae8'
   }
-
+  
+  Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
+  Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
 end
