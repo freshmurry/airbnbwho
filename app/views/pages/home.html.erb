@@ -139,67 +139,67 @@
     <div class="banner text-blue text-center"><h2>Airbnb Who? We will help you create your short-term home and room rental website buisness on your terms!</h2></div>
     <br/>
     
-    <div class="row">
-      <div class="col-md-4">
-    		<a href="https://www.airbnbwho.herokuapp.com/search?utf8=✓&search=chicago">
-    			<div class="discovery-card" style="background-image: url('/assets/chicago.jpg')">
-    				<div class="va-container">
-    					<div class="va-middle text-center">
-    						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Chicago</strong></h2>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
-    	</div>
+    <!--<div class="row">-->
+    <!--  <div class="col-md-4">-->
+    <!--		<a href="https://www.airbnbwho.herokuapp.com/search?utf8=✓&search=chicago">-->
+    <!--			<div class="discovery-card" style="background-image: url('/assets/chicago.jpg')">-->
+    <!--				<div class="va-container">-->
+    <!--					<div class="va-middle text-center">-->
+    <!--						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Chicago</strong></h2>-->
+    <!--					</div>-->
+    <!--				</div>-->
+    <!--			</div>-->
+    <!--		</a>-->
+    <!--	</div>-->
     
-    	<div class="col-md-4">
-    		<a href="https://www.airbnbwho.herokuapp.com/search?utf8=✓&search=atlanta">
-    			<div class="discovery-card" style="background-image: url('/assets/atlanta.jpg')">
-    				<div class="va-container">
-    					<div class="va-middle text-center">
-    						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Atlanta</strong></h2>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
-    	</div>
+    <!--	<div class="col-md-4">-->
+    <!--		<a href="https://www.airbnbwho.herokuapp.com/search?utf8=✓&search=atlanta">-->
+    <!--			<div class="discovery-card" style="background-image: url('/assets/atlanta.jpg')">-->
+    <!--				<div class="va-container">-->
+    <!--					<div class="va-middle text-center">-->
+    <!--						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Atlanta</strong></h2>-->
+    <!--					</div>-->
+    <!--				</div>-->
+    <!--			</div>-->
+    <!--		</a>-->
+    <!--	</div>-->
     
-    	<div class="col-md-4">
-    		<a href="https://www.airbnbwho.herokuapp.com/search?utf8=✓&search=dallas">
-    			<div class="discovery-card" style="background-image: url('/assets/dallas.jpg')">
-    				<div class="va-container">
-    					<div class="va-middle text-center">
-    						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Dallas</strong></h2>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
-    	</div>
+    <!--	<div class="col-md-4">-->
+    <!--		<a href="https://www.airbnbwho.herokuapp.com/search?utf8=✓&search=dallas">-->
+    <!--			<div class="discovery-card" style="background-image: url('/assets/dallas.jpg')">-->
+    <!--				<div class="va-container">-->
+    <!--					<div class="va-middle text-center">-->
+    <!--						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Dallas</strong></h2>-->
+    <!--					</div>-->
+    <!--				</div>-->
+    <!--			</div>-->
+    <!--		</a>-->
+    <!--	</div>-->
     </div>
   </div>  
 </section>
 
-<script>
-  $('#start_date').datepicker({
-    dateFormat: 'mm/dd/yy',
-    minDate: 0, 
-    maxDate: '12m',
-    onSelect: function(selected) {
-      $('#end_date').datepicker("option", "minDate", selected);
-      $('#end_date').attr("disabled", false);
-    }
-  });
+// <script>
+//   $('#start_date').datepicker({
+//     dateFormat: 'mm/dd/yy',
+//     minDate: 0, 
+//     maxDate: '12m',
+//     onSelect: function(selected) {
+//       $('#end_date').datepicker("option", "minDate", selected);
+//       $('#end_date').attr("disabled", false);
+//     }
+//   });
   
-  $('#end_date').datepicker({
-    dateFormat: 'mm/dd/yy',
-    minDate: 0, 
-    maxDate: '3m',
-    onSelect: function(selected) {
-      $('#start_date').datepicker("option", "maxDate", selected);
-    }
-  });
+//   $('#end_date').datepicker({
+//     dateFormat: 'mm/dd/yy',
+//     minDate: 0, 
+//     maxDate: '3m',
+//     onSelect: function(selected) {
+//       $('#start_date').datepicker("option", "maxDate", selected);
+//     }
+//   });
 
-  $(function() {
-    $("#autolocation").geocomplete();
-  })
-</script>
+//   $(function() {
+//     $("#autolocation").geocomplete();
+//   })
+// </script>

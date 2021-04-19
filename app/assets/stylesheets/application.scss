@@ -72,6 +72,7 @@ h4.my-3 {
 header {
   // background-image: url('https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/681db9e54e12d56d3c8fbae7a5729902-full.webp');
   color: white !important;
+  text-shadow: rgb(0, 0, 0) 2px 1px;
 }
 
 .page-header {
@@ -197,7 +198,7 @@ div.panel-body {
 }
 
 .navbar-default .navbar-brand {
-  color: #2C3E50;
+  color: #FF385C;
   font-size: 2.5em;
   font-weight: bold; font-family: Ubuntu;
   margin-top: 5px;
@@ -228,6 +229,7 @@ ul.nav.navbar-nav.navbar-right a {
 .btn-small {
   padding: 5px 15px;
   margin-top: 15px;
+  // color: #FF385C;
 }
 
 .btn:hover, .btn:focus {
@@ -245,8 +247,8 @@ ul.nav.navbar-nav.navbar-right a {
 }
 
 .btn.btn-normal {
-  border: 1px solid #ff5a5f;
-  background-color: #ff5a5f;
+  border: 1px solid #FF385C;
+  background-color: #FF385C;
 }
 
 .btn.btn-normal:active {
@@ -256,8 +258,8 @@ ul.nav.navbar-nav.navbar-right a {
 }
 
 .btn.btn-form {
-  border: 1px outset #00A699;
-  background-color: #00A699;
+  border: 1px outset #CCC;
+  background-color: #FF385C;
   // border-radius: 2px;
 }
 
