@@ -11,6 +11,9 @@
           <span class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><%= link_to room.listing_name, room %></span></br>
           <span class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><span id="star_<%= room.id %>"></span>&nbsp;<%= pluralize(room.average_rating, "review") %>
           <!--<span class="price-box-wrapper pull-right"><b>$<= room.price %></b></span>-->
+          <button class="btn btn-form btn-normal pull-right">
+          <%= link_to "Book Now", room_path(id: 1), style: "color: white; text-decoration: none;" %>
+        </button>
         </div>
       </div>
     </div>
