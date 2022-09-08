@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'delayed_job'
+gem 'mimemagic', '~> 0.3.10'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -78,3 +79,4 @@ gem 'rails-assets-card', source: 'https://rails-assets.org'
 gem 'omniauth-stripe-connect', '~> 2.10.0'
 
 gem "chartkick", ">= 3.2.0"
+gem "multipart-post", "~> 2.2"
