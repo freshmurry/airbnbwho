@@ -59,7 +59,11 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
+<<<<<<< HEAD
   config.action_mailer.default_url_options = { host: 'https://860c115e1ab74bf6a7a24d9465a012c4.vfs.cloud9.us-east-1.amazonaws.com/' }
+=======
+    config.action_mailer.default_url_options = { host: 'https://3428d2164c8b432daa53864d6474da8b.vfs.cloud9.us-east-1.amazonaws.com' }
+>>>>>>> 4671ea5b8f04901cafb80d15a741fdf74981d092
 
   # Mailgun Integration
   
@@ -77,9 +81,17 @@ Rails.application.configure do
     config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.org',
     port: 587,
+<<<<<<< HEAD
     domain: 'info@airbnbwho.com',
+=======
+    # domain: 'info@shindigspace.com',
+>>>>>>> 4671ea5b8f04901cafb80d15a741fdf74981d092
     authentication: 'plain',
     user_name: 'postmaster@sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
     password: '20e436f9190a67c9fbb9b852ab52cae8'
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4671ea5b8f04901cafb80d15a741fdf74981d092
 end

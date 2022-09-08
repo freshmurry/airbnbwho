@@ -27,7 +27,7 @@ production:
 
 # AWS Elastic Beanstalk Production Database  
 production:
-  # adapter: postgresql
-  # username: airbnbwho
-  # password: <%= Rails.application.secrets.postgresql_password %>
+  adapter: postgresql
+  database: db/production.postgresql
+  
   url: <%= ENV['DATABASE_URL'] %>
