@@ -1,4 +1,4 @@
-<section class="">
+<!--<section class="">-->
   <div class="container">
     <div class="row">
       <div class="col-md-3">
@@ -15,46 +15,50 @@
             <div class="container">
               <%= form_for @room do |f| %>
     
-                  <div class="form-group">
-                    <div class="col-md-4">
+                  <div class="">
+                    <div class="col-md-2">
                       <%= f.check_box :is_kitchen %> Kitchen
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                       <%= f.check_box :is_tv %> TV
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                       <%= f.check_box :is_self_parking %> Street Parking
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    
-                    <div class="col-md-4">
+                  <div class="">
+                    <div class="col-md-2">
                       <%= f.check_box :is_valet_parking %> Valet Parking
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                       <%= f.check_box :is_garage_parking %> Garage Parking
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                       <%= f.check_box :is_air %> Air Conditioning
                     </div>
                   </div>
                   
+<<<<<<< HEAD
+                  <div class="">
+                    <div class="col-md-2">
+=======
                   <div class="form-group">
                     <div class="col-md-4">
+>>>>>>> 4671ea5b8f04901cafb80d15a741fdf74981d092
                       <%= f.check_box :is_heating %> Heating
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                       <%= f.check_box :is_wifi %> Wifi
                     </div>
-                    <div class="col-md-4">
-                      <%= f.check_box :is_handi_accessible %> Handi-Accessible
+                    <div class="col-md-2">
+                      <%= f.check_box :is_bar %> Bar
                     </div>
                   </div>
                   
-                  <div class="form-group">
+                  <div class="">
                     <div class="col-md-4">
-                      <%= f.check_box :is_bar %> Bar
+                      <%= f.check_box :is_handi_accessible %> Handi-Accessible
                     </div>
                   </div>
                   
@@ -62,11 +66,10 @@
                     
                   <!--</div>-->
                   
-                  <br/><br/>
-    
-                  <div class="text-center">
+                  <div class="col-md-12 text-center">
                     <%= f.submit "Save", class: "btn btn-form" %>
                   </div>
+                  
               <% end %>
             </div>
           </div>
@@ -74,4 +77,4 @@
       </div>
     </div>
   </div>
-</section>
+<!--</section>-->

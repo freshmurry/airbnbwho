@@ -59,8 +59,8 @@ class RoomsController < ApplicationController
     else
       flash[:alert] = "Something went wrong..."
     end
-    redirect_back(fallback_location: request.referer)
-    # redirect_to room_path(@room), notice: "Saved..."
+    # redirect_back(fallback_location: request.referer)
+    redirect_to room_path(@room), notice: "Saved..."
   end
   
   #---- RESERVATIONS ----

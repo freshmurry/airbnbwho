@@ -20,24 +20,21 @@
           <div class="panel-body">
             <div class="container">
               <% @rooms.each do |room| %>
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="container-fluid">
-                      <div class="col-md-2">
-                        <%= image_tag room.cover_photo(:thumb) %>
-                      </div>
-                      <div class="col-md-7">
-                        <h5><%= room.listing_name %></h5>
-                      </div>
-                      <div class="col-md-2">
-                        <%= link_to "Update", listing_room_path(room), class: "btn btn-form" %>
-                      </div>
-                    </div>  
-                  </div>  
+                <div class="col-md-2 panel-heading preview">
+                  <%= image_tag room.cover_photo(:thumb) %>
                 </div>
-                <hr/>
-              <% end %>
+                <div class="col-md-6">
+                  <h5><%= room.listing_name %></h5>
+                </div>
+                <div class="pull-right">
+                  <%= link_to "Update", listing_room_path(room), class: "btn btn-form" %>
+                  <%= link_to room, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="btn btn-danger">Delete</span>
+                  <% end %>
+                </div>
             </div>
+            <hr/>
+            <% end %>
           </div>
         </div>
       </div>
