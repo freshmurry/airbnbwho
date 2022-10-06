@@ -37,7 +37,7 @@ Rails.application.routes.draw do
    get '/current_reservations' => 'reservations#current_reservations'
 
    get 'about' => 'pages#about'
-   get 'search' => 'pages#search'
+#   get 'search' => 'pages#search'
    get 'terms' => 'pages#terms'
    get 'faq' => 'pages#faq'
    get 'blog' => 'pages#blog'

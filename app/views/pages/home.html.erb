@@ -159,27 +159,27 @@
   </div>  
 </section>
 
-// <script>
-//   $('#start_date').datepicker({
-//     dateFormat: 'mm/dd/yy',
-//     minDate: 0, 
-//     maxDate: '12m',
-//     onSelect: function(selected) {
-//       $('#end_date').datepicker("option", "minDate", selected);
-//       $('#end_date').attr("disabled", false);
-//     }
-//   });
+<script>
+  $('#start_date').datepicker({
+    dateFormat: 'mm/dd/yy',
+    minDate: 0, 
+    maxDate: '12m',
+    onSelect: function(selected) {
+      $('#end_date').datepicker("option", "minDate", selected);
+      $('#end_date').attr("disabled", false);
+    }
+  });
   
-//   $('#end_date').datepicker({
-//     dateFormat: 'mm/dd/yy',
-//     minDate: 0, 
-//     maxDate: '3m',
-//     onSelect: function(selected) {
-//       $('#start_date').datepicker("option", "maxDate", selected);
-//     }
-//   });
+  $('#end_date').datepicker({
+    dateFormat: 'mm/dd/yy',
+    minDate: 0, 
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#start_date').datepicker("option", "maxDate", selected);
+    }
+  });
 
-//   $(function() {
-//     $("#autolocation").geocomplete();
-//   })
-// </script>
+  $(function() {
+    $("#autolocation").geocomplete();
+  })
+</script>
