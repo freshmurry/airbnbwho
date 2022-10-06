@@ -52,6 +52,7 @@ gem 'jquery-ui-rails', '~> 5.0'
 gem 'ransack', '~> 1.7'
 gem 'puma'
 gem 'figaro'
+gem 'redis'
 
 group :production do
   gem 'pg', '~> 0.20.0'
