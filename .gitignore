@@ -33,4 +33,3 @@ vendor/bundle.c9
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/vendor/bundle

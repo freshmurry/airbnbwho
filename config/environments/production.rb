@@ -49,11 +49,11 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  config.web_socket_server_url = "wss://action-cable-shindigspace.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://action-cable-shindigspace.herokuapp.com/cable', 'https://action-cable-shindigspace.herokuapp.com/cable' ]
+  config.web_socket_server_url = "wss://action-cable-airbnbwho.com/cable"
+  config.action_cable.allowed_request_origins = ['https://action-cable-airbnbwho.com/cable', 'https://action-cable-airbnbwho.com/cable' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -88,22 +88,34 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   #Required for Heroku
-  # config.action_mailer.default_url_options = { host: 'www.shindigspace.com' }
+  # config.action_mailer.default_url_options = { host: 'https://airbnbwho.herokuapp.com' }
 
   config.action_mailer.raise_delivery_errors = true
   
     config.action_mailer.delivery_method = :smtp
-    # host = 'shindigspace.com'
-    config.action_mailer.default_url_options = { host: 'https://airbnbwho.herokuapp.com' }
+    host = 'airbnbwho.herokuapp.com'
+    config.action_mailer.default_url_options = { host: host }
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
       :port           => '587',
       :authentication => :plain,
       :user_name      => ENV['SENDGRID_USERNAME'],
       :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => 'shindigspace.com',
+      :domain         => 'airbnbwho.herokuapp.com',
       :enable_starttls_auto => true
     }
+  
+  # ApplicationMailer.notify_user("info@airbnbwho.com").deliver_later
+ 
+  #   ActionMailer::Base.smtp_settings = {
+  #   :port           => ENV['MAILGUN_SMTP_PORT'],
+  #   :address        => ENV['MAILGUN_SMTP_SERVER'],
+  #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  #   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  #   :domain         => 'airbnbwho.heroku.com',
+  #   :authentication => :plain,
+  # }
+  # ActionMailer::Base.delivery_method = :smtp
   
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

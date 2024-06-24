@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.7.4'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 5.0.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 4.0.2'
 gem 'coffee-rails', '~> 4.2'
@@ -16,7 +16,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'delayed_job'
-gem 'mimemagic', '~> 0.3.10'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -52,7 +51,7 @@ gem 'jquery-ui-rails', '~> 5.0'
 gem 'ransack', '~> 1.7'
 gem 'puma'
 gem 'figaro'
-gem 'redis', '~> 3.0'
+gem 'redis'
 
 group :production do
   gem 'pg', '~> 0.20.0'
@@ -75,9 +74,10 @@ gem 'momentjs-rails', '~> 2.17.1'
 
 gem 'stripe', '~> 3.0.0'
 gem 'rails-assets-card', source: 'https://rails-assets.org'
-gem 'rails-assets-jquery', :source => 'https://rails-assets.org/'
 
 gem 'omniauth-stripe-connect', '~> 2.10.0'
 
 gem "chartkick", ">= 3.2.0"
-gem "multipart-post", "~> 2.2"
+
+gem 'mimemagic', '~> 0.3.10'
+gem 'activerecord-session_store'

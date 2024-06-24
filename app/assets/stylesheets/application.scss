@@ -87,10 +87,10 @@ header {
   margin-top: 120px;
 }
 
-// h1 .page-header-title {
-//   text-size: 60px;
-//   color: #FFF !important;
-// }
+h1 .page-header-title {
+  text-size: 60px;
+  color: #FFF !important;
+}
 
 .overlay {
   position: relative;
@@ -169,7 +169,7 @@ h3 {
 }
 
 div.panel-body {
-  // margin-right: -55px;
+  margin-right: -55px;
   margin-left: -55px;
 }
 
@@ -202,6 +202,7 @@ div.panel-body {
   font-size: 2.5em;
   font-weight: bold; font-family: Ubuntu;
   margin-top: 5px;
+  text-shadow: black 1px 1px;
 }
 
 ul.nav.navbar-nav.navbar-right a {

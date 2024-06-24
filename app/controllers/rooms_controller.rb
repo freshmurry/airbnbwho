@@ -27,6 +27,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @room = Room.find(params[:id])
     @photos = @room.photos
     @guest_reviews = Review.where(type: "GuestReview")
   end
@@ -59,8 +60,8 @@ class RoomsController < ApplicationController
     else
       flash[:alert] = "Something went wrong..."
     end
-    # redirect_back(fallback_location: request.referer)
-    redirect_to room_path(@room), notice: "Saved..."
+    redirect_back(fallback_location: request.referer)
+    # redirect_to room_path(@room), notice: "Saved..."
   end
   
   #---- RESERVATIONS ----
