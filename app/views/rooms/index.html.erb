@@ -1,0 +1,51 @@
+<section class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="sidebar-list">
+          <% if current_user && current_user.id == 1 %>
+          <li class="sidebar-item"><%= link_to "Current Listings", rooms_path, class: "sidebar-link active" %></li>
+          <% else %>
+          <li class="sidebar-item"><%= link_to "Current Reservations", current_reservations_path, class: "sidebar-link" %></li>
+          <li class="sidebar-item"><%= link_to "Previous Reservations", previous_reservations_path, class: "sidebar-link" %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Listings
+          </div>
+          
+          <div class="panel-body">
+            <div class="container">
+              <% @rooms.each do |room| %>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="container-fluid">
+                      <div class="col-md-2">
+                        <%= image_tag room.cover_photo(:thumb) %>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><%= room.listing_name %></h5>
+                      </div>
+                      <div class="col-md-2">
+                        <%= link_to "Update", listing_room_path(room), class: "btn btn-form btn-small" %>
+                      </div>
+                      <div class="col-md-2">
+                        <%= link_to room, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                          <span class="btn btn-danger btn-small">Delete</span>
+                        <% end %>
+                       </div> 
+                    </div>  
+                  </div>  
+                </div>
+                <hr/>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  

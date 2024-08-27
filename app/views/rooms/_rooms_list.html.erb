@@ -1,0 +1,55 @@
+<% rooms.each do |room| %>
+  <div class="col-md-4">
+    <div class="container">
+      <div class="panel-heading preview">
+        
+        <!-- Image -->
+        <div class="row">
+          <% if room.photos.present? %>
+            <div id="myCarousel<%= room.id %>" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <% room.photos.each_with_index do |photo, index| %>
+                  <li data-target="#myCarousel<%= room.id %>" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+                <% end %>
+              </ol>
+          
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <% room.photos.each_with_index do |photo, index| %>
+                  <div class="item <%= 'active' if index == 0 %>">
+                    <%= image_tag photo.image.url %>
+                  </div>
+                <% end %>
+              </div>
+            
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel<%= room.id %>" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel<%= room.id %>" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="">
+        <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><%= link_to room.listing_name, room %></div>
+        <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><span id="star_<%= room.id %>"></span>&nbsp;<%= pluralize(room.average_rating, "review") %></div>
+        <div><b>$<%= room.price %>/ night</b></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    $('#star_<%= room.id %>').raty({
+      path: '/assets',
+      readOnly: true,
+      score: <%= room.average_rating %>
+    });
+  </script>
+<% end %>

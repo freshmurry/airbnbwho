@@ -1,0 +1,57 @@
+<section class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="sidebar-list">
+          <% if current_user && current_user.id == 1 %>
+          <li class="sidebar-item"><%= link_to "Current Listings", rooms_path, class: "sidebar-link" %></li>
+          <% else %>
+          <li class="sidebar-item"><%= link_to "Current Reservations", current_reservations_path, class: "sidebar-link" %></li>
+          <li class="sidebar-item"><%= link_to "Previous Reservations", previous_reservations_path, class: "sidebar-link active" %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Previous Reservations
+          </div>
+          <div class="panel-body">
+          <div class="container">
+            <% @spaces.each do |space| %>
+              <div class="row">
+                <div class="container">
+                  <div class="col-md-2">
+                    <%= space.start_date.strftime('%D') %>
+                    <p><%= space.status %></p>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="panel-heading-preview">
+                      <%= link_to room_path(space.room) do %>
+                        <%= image_tag space.room.cover_photo(:thumb) %>
+                      <% end %>
+                    </div>  
+                  </div>
+                  <div class="col-md-5">
+                    <%= link_to space.room.listing_name, room_path(space.room) %><br/>
+                    <span>
+                      <%= image_tag (space.room.user.image), class: "img-circle avatar-small" %>
+                      <%= link_to user_path(space.room.user) do %>
+                      <%= space.room.user.fullname %>
+                      <% end %>
+                    </span>
+                  </div>
+                  <div class="col-md-3 text-right">
+                    <%= render partial: "reviews/guest_form", locals: {reservation: space} if space.Approved? %>
+                  </div>
+                </div>
+              </div>
+              <hr/>
+            <% end %>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  

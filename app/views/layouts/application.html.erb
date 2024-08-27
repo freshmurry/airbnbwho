@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AirBnb Who? | Vacation Home Booking Website Development</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnqDrT86OzRZVorExsMjFhYdp0TTOKQpE&libraries=places"></script> %>
+    <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnqDrT86OzRZVorExsMjFhYdp0TTOKQpE&callback=initMap"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu|Cabin" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+		
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="author" content="Airbnb Who" />
+    <meta name="keywords" content="Vacation Home Booking Website, airbnb host, booking website, vacation home website, direct booking website" />
+    <meta name="description" content="Airbnb Who? Airbnb Who? Build Your Own Vacation Home Booking Website.">
+    <meta name="google-site-verification" content="" />
+    <meta property="og:site_name" content="Airbnb Who" />
+    <meta property="og:url" content="https://airbnbwho.herokuapp.com" />
+    <meta property="og:title" content="Airbnb Who | Airbnb Who? Build Your Own Direct Booking Website."/>
+    <meta property="og:description" content="Airbnb Who? Airbnb Who? Build Your Own Vacation Home Booking Website." />
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://airbnbwho.herokuapp.com">
+    <meta name="twitter:title" content="Airbnb Who?" />
+    <meta property="twitter:description" content="Airbnb Who? Build Your Own Vacation Home Booking Website." />
+    <meta name="twitter:image" content="" />
+    
+    <meta name="facebook:card" content="summary" />
+    <meta name="facebook:url" content="https://airbnbwho.herokuapp.com">
+    <meta property="fb:app_id" content="" />
+    <meta name="facebook:title" content="Airbnb Who?" />
+    <meta property="facebook:description" content="Airbnb Who? Airbnb hosts are building their own Vacation Home Booking Website." />
+    <meta name="facebook:image" content="" />
+    <meta property="og:image:alt" content="Vacation Home Booking Website" />
+    <meta name="" content="" />
+    
+    <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  </head>
+
+  <body>
+    
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/message' %>
+  
+    <% if current_user %>
+      <input type="hidden" id="user_id" value="<%= current_user.id %>">
+    <% end %>
+    
+    <!--<div class="container">-->
+    	<%= yield %>
+    <!--</div>-->
+    
+    <%= render 'shared/footer' %>
+    
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+  </body>
+</html>

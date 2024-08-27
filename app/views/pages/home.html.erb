@@ -1,0 +1,202 @@
+<% if @rooms.present? %>
+  <!-- Image -->
+  <% @rooms.each do |room| %>
+      <div class="row">
+        <div id="myCarousel<%= room.id %>" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <% room.photos.each_with_index do |photo, index| %>
+              <li data-target="#myCarousel<%= room.id %>" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+            <% end %>
+          </ol>
+          
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <% room.photos.each_with_index do |photo, index| %>
+              <div class="item <%= 'active' if index == 0 %>">
+                <%= image_tag photo.image.url, alt:"Vacation Home Booking Website" %>
+              </div>
+            <% end %>
+          </div>
+            
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel<%= room.id %>" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel<%= room.id %>" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <header class="page-header bg-img-cover overlay overlay-primary overlay-90 page-header-dark" style="background-image: url('https://res.cloudinary.com/peerspace-inc/image/upload/k1e3susxysl1zr7aqpvi.jpg');">
+    <div class="page-header-content py-5">
+      <div class="container">
+        <div class="row banner">
+          <div class="col-xl-8 text-center">
+            <h1 class="page-header-title">Your Awesome Vacation Home Website Awaits</h1>
+            <h4 class="page-header-text mb-5">Book This Vacation Home for Your Next Getaway</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <sbpro-border>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 10.34" preserveAspectRatio="none" fill="currentColor"></svg>
+    </sbpro-border>
+  </header>
+<% end %>
+
+<br>
+
+<!-- HOMES -->
+<section class="">
+  <div class="container">
+    <div class="banner text-center">
+    	<h2 class="text-blue">Looking to develop your own vacation home rental website?</h2>
+      <h3>This Vacation Home Booking Website Could be Yours!</h3>
+    </div>
+    <br/>
+      
+    <div class="row">
+      <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms}, alt:"Vacation Home Booking Website" %>
+    </div>
+  </div>
+</section>
+  
+<!-- HOW ABNBCLONE WORKS -->
+<section class="">
+  <div class="container">
+    <div class="page-section">
+    <div class="banner text-center">
+     	<h2 class="text-blue">Contact-less Awesomeness</h2>
+      <h3></h3>
+    </div>
+        
+    <div class="row text-center">
+      <div class="col-md-4">
+      <div class="fas fa-home fa-4x text-blue"></div>
+        <h3 class="my-3">Explore Our Vacation Home Booking Website</h3>
+        <p class="text-center">Like what you see? Confirm your date and await your approval from the host. Listings with the <i class="fa fa-bolt" style="color: #ffb400"></i> icon will be booked instantly.</p>
+      </div>
+                        
+      <div class="col-md-4">
+      <div class="fas fa-envelope fa-4x text-blue"></div>
+        <h3>Chat With Us</h3>
+        <p class="text-center">Send a message to your host if you need additional information. Host will communicate any additional information as needed in a timely manner.</p>
+      </div>
+                        
+      <div class="col-md-4">
+      <div class="fas fa-credit-card fa-4x text-blue"></div>
+       	<h3>Book and Pay</h3>
+       	<p class="text-center">Our calender system helps both host and guest see your reservation day in realtime. Submit your payment will be a breeze through our secure online checkout.</p>
+      </div>
+      
+      <div class="row">
+        <div class="banner col-lg-12 text-center">
+          <button class="btn btn-form">
+            <%= link_to "Book Now!", new_user_registration_path, style: "text-decoration: none; color: #FFF; font-weight: 500; font-size: 20px" %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="">
+  <div class="container">
+    <div class="banner page-section bg-light">
+      <!--<div class="container">-->
+        <div class="text-center">
+          <h2 class="section-heading text-blue">Customer Testimonials</h2>
+          <h3 class="section-subheading text-muted">Here's what our customers had to say...</h3>
+        </div>
+      
+        <div class="banner row">
+          <div class="col-lg-4">
+            <div class="discovery-card" style="background-image: url('/assets/testimonials-1.jpg')" alt="Customer 1"></div>
+            <h3>Katy S.</h3>
+            <p class="text-center">"Having my own vacation home booking website allows me complete freedom. No longer do I have to give up so much of my booking income to a third-party!"</p>
+          </div>  
+      
+          <div class="col-lg-4">
+            <div class="discovery-card" style="background-image: url('/assets/testimonials-2.jpg')" alt="Customer 2"></div>
+            <h3>Larry P.</h3>
+            <p class="text-center">"There's probably no other better way to beat the rediculous hosting fees that of other vacation rental websites charge. I now enjoy having the ability to see more of my earning using my own vacation home booking website."</p>
+          </div>
+      			
+          <div class="col-lg-4">
+            <div class="discovery-card" style="background-image: url('/assets/testimonials-3.jpg')" alt="Customer 3"></div>
+            <h3>Diana W.</h3>
+            <p class="text-center">"Our guest were completely satisfied with booking on our site and not having to pay ridiculous booking fees."</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <button class="btn btn-form">
+              <%= link_to "I Want My Own Vacation Booking Website!", "mailto:lawrencemurry@yahoo.com?subject=User%20Clicked%20the%20Link&body=User%20clicked%20the%20link%20on%20the%20website.", style: "text-decoration: none; color: #FFF; font-weight: 500; font-size: 20px" %>
+            </button>
+          </div>
+        </div>
+      <!--</div>-->
+    </div>
+  </div>
+</section>  
+
+<section class="">
+  <div class="container">
+    <div class="banner text-blue text-center"><h2>AirbnbWho? We will help you create your very own short-term vaction home and room rental website buisness on your terms!</h2></div>
+    <br/>
+    
+    <!-- GOOGLE MAP WILL BE HERE -->
+    
+        <div id="map" style="width: 100%; height: 500px;"></div>
+    
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwN_tpAAKnHhy14HzNqK-XeuarVJhNHg8&callback=initMap" async defer></script>
+        
+        <script>
+          function initMap() {
+            var location = {lat: 41.881832, lng: -87.623177};
+    
+            // Create the map
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: location,
+              zoom: 12
+            });
+
+            // Fetch room data from Rails
+            var rooms = <%= raw @arrRooms.to_json %>;
+
+            if (rooms.length === 0) {
+              console.log("No rooms data available");
+            }
+            
+            rooms.forEach(function(room) {
+              if (room.latitude && room.longitude) {
+                var marker = new google.maps.Marker({
+                  position: { lat: room.latitude, lng: room.longitude },
+                  map: map
+                });
+
+                var infoWindow = new google.maps.InfoWindow({
+                  content: "<div class='map_price'>$" + room.price + "</div>"
+                });
+
+                marker.addListener('click', function() {
+                  infoWindow.open(map, marker);
+                });
+              } else {
+                console.warn("Room missing latitude or longitude:", room);
+              }
+            });
+          }
+        </script>
+      </div>
+    </div>
+  </div>  
+</section>
