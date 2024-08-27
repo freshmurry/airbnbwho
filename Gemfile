@@ -81,4 +81,3 @@ gem "chartkick", ">= 3.2.0"
 
 gem 'mimemagic', '~> 0.3.10'
 gem 'activerecord-session_store'
-gem 'jquery-rails'
