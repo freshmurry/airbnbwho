@@ -11,10 +11,10 @@ module ApplicationHelper
       elsif user.image.present?
         user.image.url
       else
-        'guest.jpg'
+        'guest.png'
       end
     else
-      'guest.jpg'
+      'guest.png'
     end
   end
 
