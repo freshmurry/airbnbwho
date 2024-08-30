@@ -94,7 +94,7 @@ Rails.application.configure do
   
     config.action_mailer.delivery_method = :smtp
     host = 'airbnbwho.herokuapp.com'
-    config.action_mailer.default_url_options = { host: host }
+    config.action_mailer.default_url_options = { host: airbnbwho-bddd833040881.herokuapp.com/ }
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
       :port           => '587',
