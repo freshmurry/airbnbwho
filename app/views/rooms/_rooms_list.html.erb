@@ -1,10 +1,10 @@
 <% rooms.each do |room| %>
-  <div class="col-md-4">
-    <div class="container">
-      <div class="panel-heading preview">
+  <div class="">
+    <div class="">
+      <div class="">
         
         <!-- Image -->
-        <div class="row">
+        <div class="">
           <% if room.photos.present? %>
             <div id="myCarousel<%= room.id %>" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
@@ -38,8 +38,8 @@
       </div>
       
       <div class="">
-        <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><%= link_to room.listing_name, room %></div>
-        <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><span id="star_<%= room.id %>"></span>&nbsp;<%= pluralize(room.average_rating, "review") %></div>
+        <div><%= link_to room.listing_name, room %></div>
+        <div><span id="star_<%= room.id %>"></span>&nbsp;<%= pluralize(room.average_rating, "review") %></div>
         <div><b>$<%= room.price %>/ night</b></div>
       </div>
     </div>
