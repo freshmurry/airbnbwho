@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20240831003128) do
+ActiveRecord::Schema.define(version: 20240831005921) do
 
   create_table "calendars", force: :cascade do |t|
     t.date     "day"
