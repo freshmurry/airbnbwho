@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, except: [:show]
-  before_action :authenticate_user!, only: [:show, :update_phone_number, :verify_phone_number, :payment, :payout, :add_card]
-  before_action :set_user, only: [:show, :update]
+  before_action :authenticate_user!, except: [:show]
 
   def show
     @user = User.find(params[:id])
@@ -80,6 +78,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:phone_number, :pin, :image)
+      params.require(:user).permit(:phone_number, :pin)
     end
 end
