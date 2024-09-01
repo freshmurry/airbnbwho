@@ -1,15 +1,13 @@
 class ResetUserIdSequence < ActiveRecord::Migration[5.0]
   def up
-    case ActiveRecord::Base.connection.adapter_name
-    when 'PostgreSQL'
-      # PostgreSQL-specific code to reset the sequence
+    if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
+      # PostgreSQL-specific code
       execute <<-SQL
         SELECT setval(pg_get_serial_sequence('users', 'id'), coalesce(max(id), 1), false)
         FROM users;
       SQL
-    when 'SQLite'
-      # SQLite-specific code to reset the sequence
-      # SQLite sequence handling
+    elsif ActiveRecord::Base.connection.adapter_name == 'SQLite'
+      # SQLite-specific code
       execute <<-SQL
         UPDATE sqlite_sequence SET seq = 1 WHERE name = 'users';
       SQL
@@ -19,7 +17,6 @@ class ResetUserIdSequence < ActiveRecord::Migration[5.0]
   end
 
   def down
-    # Define how to reverse the migration if needed
-    # For resetting sequences, it's often not necessary to provide a rollback action
+    # Optionally implement rollback logic if necessary
   end
 end
