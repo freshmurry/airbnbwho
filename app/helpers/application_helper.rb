@@ -29,11 +29,13 @@ module ApplicationHelper
   end
   
   def stripe_express_path
-  # ----- TEST -----
-  # "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://connect.stripe.com/connect/default/oauth/test&client_id=ca_HmZdg9VWvpwEchu1nuuzlCBFWTzegwfV&state={STATE_VALUE}"
-  # "https://connect.stripe.com/express/oauth/authorize?redirect_uri=http://localhost:3000/auth/stripe_connect/callback&client_id=ca_Bz12s2Z5ijkGknATCnWx9EmDZIvGMf0e&state={STATE_VALUE}"
-
-  # ---- LIVE ----
-  "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://abnbwho.herokuapp.com/auth/stripe_connect/callback&client_id={CONNECTED_STRIPE_ACCOUNT_ID}&state={STATE_VALUE}"
+    if Rails.env.development?
+    # ----- TEST -----
+      # "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://connect.stripe.com/connect/default/oauth/test&client_id=ca_HmZdg9VWvpwEchu1nuuzlCBFWTzegwfV&state={STATE_VALUE}"
+      "https://connect.stripe.com/express/oauth/authorize?redirect_uri=http://localhost:3000/auth/stripe_connect/callback&client_id=ca_Bz12s2Z5ijkGknATCnWx9EmDZIvGMf0e&state={STATE_VALUE}"
+    else
+      # ---- LIVE ----
+      "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://airbnbwho-bdd833040881.herokuapp.com/auth/stripe_connect/callback&client_id={CONNECTED_STRIPE_ACCOUNT_ID}&state={STATE_VALUE}"
+    end  
   end
 end

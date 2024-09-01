@@ -6,19 +6,18 @@ class User < ApplicationRecord
   # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, 
-        :omniauthable  
+        :omniauthable
   
   validates :fullname, presence: true, length: {maximum: 50}
   
   has_attached_file :image  
   has_many :rooms
   has_many :reservations
-  
   has_many :guest_reviews, class_name: "GuestReview", foreign_key: "guest_id"
   has_many :host_reviews, class_name: "HostReview", foreign_key: "host_id"
   has_many :notifications
-  
   has_one :setting
+
   after_create :add_setting
 
   def add_setting
@@ -26,23 +25,19 @@ class User < ApplicationRecord
   end
     
   def self.from_omniauth(auth)
-    user = User.where(email: auth.info.email).first
+    user = User.find_by(email: auth.info.email)
 
     if user
-      return user
+      user
     else
-      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        user.email = auth.info.email
-        user.password = Devise.friendly_token[0,20]
-        user.fullname = auth.info.name
-        user.image = auth.info.image
-        user.uid = auth.uid
-        user.provider = auth.provider
-
-        # If you are using confirmable and the provider(s) you use validate emails,
-        # uncomment the line below to skip the confirmation emails.
-        user.skip_confirmation!
-      end
+      create(
+        provider: auth.provider,
+        uid: auth.uid,
+        email: auth.info.email,
+        password: Devise.friendly_token[0, 20],
+        fullname: auth.info.name,
+        image: auth.info.image
+      ).tap { |user| user.skip_confirmation! }
     end
   end
 

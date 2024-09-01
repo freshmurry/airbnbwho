@@ -70,13 +70,16 @@
               <% else %>
               <li><%= link_to "Manage Listing", rooms_path %></li>
               <% end %>
+
               <% if current_user && current_user.id == 1 %>
               
               <% else %>
               <li><%= link_to "Book Now", new_room_path %></li>
               <% end %>
+              
               <li><%= link_to "Previous Reservations", previous_reservations_path %></li>
               <li><%= link_to "Current Reservations", current_reservations_path %></li>
+              
               <% if current_user && current_user.id == 1 %>
               <li><%= link_to "Host Home", new_room_path %></li>
               <% else %>

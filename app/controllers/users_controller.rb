@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  # before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, only: [:show, :update_phone_number, :verify_phone_number, :payment, :payout, :add_card]
+  before_action :set_user, only: [:show, :update]
 
   def show
     @user = User.find(params[:id])
-    @rooms = @user.rooms
+    @rooms = @user.rooms # Assuming you have a relationship and rooms are associated with the user
+    # Remove any reference to `confirmation_token` if present
 
     # Display all the guest reviews to host (if this user is a host)
     @guest_reviews = Review.where(type: "GuestReview", host_id: @user.id)
@@ -71,8 +74,12 @@ class UsersController < ApplicationController
   end
 
   private
+  
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     def user_params
-      params.require(:user).permit(:phone_number, :pin)
+      params.require(:user).permit(:phone_number, :pin, :image)
     end
 end

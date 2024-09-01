@@ -1,4 +1,6 @@
 class SettingsController < ApplicationController
+  before_action :set_setting
+
   def edit
     @setting = User.find(current_user.id).setting
   end
