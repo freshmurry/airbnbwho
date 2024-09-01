@@ -8,8 +8,8 @@ class ResetUserIdSequence < ActiveRecord::Migration[5.0]
         FROM users;
       SQL
     when 'SQLite'
-      # SQLite-specific code to reset the sequence if necessary
-      # Note: SQLite sequences might not need manual reset in Rails migrations
+      # SQLite-specific code to reset the sequence
+      # SQLite sequence handling
       execute <<-SQL
         UPDATE sqlite_sequence SET seq = 1 WHERE name = 'users';
       SQL
@@ -20,6 +20,6 @@ class ResetUserIdSequence < ActiveRecord::Migration[5.0]
 
   def down
     # Define how to reverse the migration if needed
-    # Typically, the down method might not be needed for resetting sequences
+    # For resetting sequences, it's often not necessary to provide a rollback action
   end
 end
